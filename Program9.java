@@ -12,40 +12,36 @@ class Program9{
 		for(int i=0; i<size; i++){
 			
 			arr[i] = sc.nextInt();
-			//int temp2 = arr[i];
+
 		}
 		
 		System.out.println("Armstrong element in the array is:");
-		
-		for(int i=0; i<arr.length; i++){
-			int temp = arr[i];
-			int tempnum = temp;
+		for(int i = 0; i<arr.length; i++){
+			
+			int temp1 = arr[i];
 			int count = 0;
-			while(tempnum != 0){
-				count++;
-				tempnum = tempnum/10;
-			}
-			int sum =0;
-			
-		int num = arr[i];
-		
-		while(num != 0){
-			
-			int mult = 1;
-			int rem = num%10;
-			int p = 1;
-			while(p<=count){
+			int temp2 = arr[i];
+			while(temp1 != 0){
 				
-				mult = mult*rem;
-				p++;
+				count++;
+				temp1 = temp1/10;
 			}
-			sum = sum + mult;
-			num = num/10;
-		}
-		
-			if(sum == arr[i]){
-				System.out.println(num);
+			int sum = 0;
+			while(temp2!=0){
+				
+				int mult = 1;
+				int rem = temp2%10;
+				int p = 1;
+				while(p<=count){
+					
+					mult = mult*rem;
+					p++;
+				}
+				sum = sum+mult;
+				temp2 = temp2/10;
 			}
-		}
+			if(sum == arr[i])
+				System.out.println(arr[i] + " is an ArmStrongNumber at index:" + i);
+		}	
 	}
 }
